@@ -114,7 +114,7 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-primary-red flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
-                  1st Floor Potohar Plaza - Blue Area, Lahore
+                  1st Floor Potohar Plaza - Blue Area, Islamabad
                 </span>
               </div>
               <div className="flex items-center space-x-3">
