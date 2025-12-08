@@ -54,20 +54,29 @@ export default function HeroSection() {
         </p>
 
         {/* Key Features */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8" role="list" aria-label="Key Services">
-          <div className="flex items-center space-x-2 text-muted-foreground" role="listitem">
-            <CheckCircle className="text-primary-red" size={20} aria-hidden="true" />
-            <span>Odoo Solutions</span>
-          </div>
-          <div className="flex items-center space-x-2 text-muted-foreground" role="listitem">
-            <CheckCircle className="text-primary-red" size={20} aria-hidden="true" />
-            <span>ERP Systems</span>
-          </div>
-          <div className="flex items-center space-x-2 text-muted-foreground" role="listitem">
-            <CheckCircle className="text-primary-red" size={20} aria-hidden="true" />
-            <span>Digital Transformation</span>
-          </div>
-        </div>
+     <div className="flex flex-wrap justify-center gap-4 mb-8" role="list" aria-label="Key Services">
+  <div className="flex items-center space-x-2 text-muted-foreground" role="listitem">
+    <CheckCircle className="text-primary-red" size={20} aria-hidden="true" />
+    <span>Accounting</span>
+  </div>
+  <div className="flex items-center space-x-2 text-muted-foreground" role="listitem">
+    <CheckCircle className="text-primary-red" size={20} aria-hidden="true" />
+    <span>Taxation</span>
+  </div>
+  <div className="flex items-center space-x-2 text-muted-foreground" role="listitem">
+    <CheckCircle className="text-primary-red" size={20} aria-hidden="true" />
+    <span>Consulting</span>
+  </div>
+  <div className="flex items-center space-x-2 text-muted-foreground" role="listitem">
+    <CheckCircle className="text-primary-red" size={20} aria-hidden="true" />
+    <span>ERP Systems</span>
+  </div>
+  <div className="flex items-center space-x-2 text-muted-foreground" role="listitem">
+    <CheckCircle className="text-primary-red" size={20} aria-hidden="true" />
+    <span>Digital Transformation</span>
+  </div>
+</div>
+
 
         {/* CTA Button */}
         <div className="flex justify-center">

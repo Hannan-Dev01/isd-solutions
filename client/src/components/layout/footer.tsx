@@ -10,6 +10,7 @@ export default function Footer() {
   const logoSrc = theme === 'light' 
     ? '/assets/images/isd-logo-light.svg' 
     : '/assets/images/isd-logo-dark.svg';
+     
 
   return (
     <footer className="bg-card border-t border-border">
@@ -21,9 +22,11 @@ export default function Footer() {
               <div className="flex items-center space-x-2">
                 <img 
                   src={logoSrc}
+                  style={{height:56}}
                   alt="ISD Solutions Logo" 
                   className="h-25 w-auto transition-transform duration-300 group-hover:scale-110"
                 />
+             
               </div>
             </Link>
             <p className="text-muted-foreground mb-4 leading-relaxed">
