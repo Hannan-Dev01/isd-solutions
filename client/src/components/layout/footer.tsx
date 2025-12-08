@@ -1,16 +1,24 @@
 import React from "react";
 import { Link } from "wouter";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 
 export default function Footer() {
   const { theme } = useTheme();
 
   // Choose logo based on theme
-  const logoSrc = theme === 'light' 
-    ? '/assets/images/isd-logo-light.svg' 
-    : '/assets/images/isd-logo-dark.svg';
-     
+  const logoSrc =
+    theme === "light"
+      ? "/assets/images/isd-logo-light.svg"
+      : "/assets/images/isd-logo-dark.svg";
 
   return (
     <footer className="bg-card border-t border-border">
@@ -20,29 +28,41 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-3 mb-2 group">
               <div className="flex items-center space-x-2">
-                <img 
+                <img
                   src={logoSrc}
-                  style={{height:56}}
-                  alt="ISD Solutions Logo" 
+                  style={{ height: 56 }}
+                  alt="ISD Solutions Logo"
                   className="h-25 w-auto transition-transform duration-300 group-hover:scale-110"
                 />
-             
               </div>
             </Link>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              Leading IT solutions provider delivering innovative technology services that drive business growth and digital transformation.
+              Leading IT solutions provider delivering innovative technology
+              services that drive business growth and digital transformation.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+              >
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+              >
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+              >
                 <Linkedin size={20} />
               </a>
             </div>
@@ -50,30 +70,47 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Services</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-4">
+              Services
+            </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+                <Link
+                  href="/services"
+                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+                >
                   Odoo Consultant
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+                <Link
+                  href="/services"
+                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+                >
                   ERP Next
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+                <Link
+                  href="/services"
+                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+                >
                   FBR Digital Invoicing
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+                <Link
+                  href="/services"
+                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+                >
                   Web Development
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+                <Link
+                  href="/services"
+                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+                >
                   Mobile Development
                 </Link>
               </li>
@@ -82,25 +119,39 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Company</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-4">
+              Company
+            </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+                <Link
+                  href="/about"
+                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+                <Link
+                  href="/projects"
+                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+                >
                   Our Projects
                 </Link>
               </li>
               <li>
-                <Link href="/testimonials" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+                <Link
+                  href="/testimonials"
+                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+                >
                   Testimonials
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+                <Link
+                  href="/contact"
+                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+                >
                   Contact
                 </Link>
               </li>
@@ -109,7 +160,9 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Contact Info</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-4">
+              Contact Info
+            </h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-primary-red flex-shrink-0" />
@@ -139,10 +192,16 @@ export default function Footer() {
             © 2024 ISD Solutions. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm">
-            <Link href="/privacy-policy" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+            <Link
+              href="/privacy-policy"
+              className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms-conditions" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
+            <Link
+              href="/terms-conditions"
+              className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+            >
               Terms & Conditions
             </Link>
           </div>
