@@ -29,10 +29,10 @@ function AppContent() {
         <meta name="theme-color" content="#dc2626" />
         
         {/* Primary Meta Tags */}
-        <title>ISD Solutions | ERP, AI, Software Development & Digital Transformation Company</title>
-        <meta name="title" content="ISD Solutions | ERP, AI, Software Development & Digital Transformation Company" />
-        <meta name="description" content="ISD Solutions provides ERP implementation, ERPNext, Odoo ERP, Oracle EBS support, AI agents, Agentic AI solutions, custom Laravel development, Python applications, reporting dashboards, FBR digital invoicing, business automation, and enterprise technology solutions." />
-        <meta name="keywords" content="ERP Implementation, Odoo ERP, ERPNext, Oracle EBS, AI Solutions, Agentic AI, Laravel Development, Python Development, FBR Digital Invoicing, Business Automation, Digital Transformation, Enterprise Software, Pakistan" />
+        <title>ISD Solutions | ERP Solutions & Custom Software Development Company</title>
+        <meta name="title" content="ISD Solutions | ERP Solutions & Custom Software Development Company" />
+        <meta name="description" content="ISD Solutions provides ERPNext, Odoo ERP, Oracle EBS support, custom Laravel and Python development, reporting dashboards, FBR digital invoicing, cloud infrastructure, and business automation." />
+        <meta name="keywords" content="ERP Solutions, ERPNext, Odoo ERP, Oracle EBS, Custom Software Development, Laravel Development, Python Development, Reporting Dashboards, FBR Digital Invoicing, Business Automation, Pakistan" />
         <meta name="author" content="ISD Solutions" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
@@ -82,7 +82,7 @@ function AppContent() {
             "alternateName": "Integrated Synchronized Digitilized Solutions",
             "url": "https://isdsolutions.org",
             "logo": "https://isdsolutions.org/assets/images/isd-logo-light.svg",
-            "description": "ISD Solutions provides ERP implementation, ERPNext, Odoo ERP, Oracle EBS support, AI agents, Agentic AI solutions, custom Laravel development, Python applications, reporting dashboards, FBR digital invoicing, business automation, and enterprise technology solutions.",
+            "description": "ISD Solutions provides ERPNext, Odoo ERP, Oracle EBS support, custom Laravel and Python development, reporting dashboards, FBR digital invoicing, cloud infrastructure, and business automation.",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "1st Floor Potohar Plaza - Blue Area",

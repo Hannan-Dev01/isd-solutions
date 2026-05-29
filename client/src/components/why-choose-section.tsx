@@ -1,44 +1,51 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
 import {
-  Brain,
+  BarChart3,
+  Code,
+  Database,
   HeadphonesIcon,
   Layers,
-  Scale,
   Target,
-  Wrench,
 } from "lucide-react";
 import { useScrollAnimation } from "../lib/scroll-animations";
+import { SectionIcon } from "../lib/section-icon";
 
 const reasons = [
   {
-    title: "ERP & Enterprise Expertise",
-    description: "Deep experience in ERP implementation and business systems.",
+    title: "ERP & Business Process Understanding",
+    description:
+      "Experience across finance, HR, inventory, manufacturing, and sales operations.",
+    icon: Database,
+  },
+  {
+    title: "Custom Development Across Stacks",
+    description:
+      "Laravel, Python, FastAPI, APIs, portals, and workflow systems tailored to your needs.",
+    icon: Code,
+  },
+  {
+    title: "Oracle, ERPNext & Odoo Experience",
+    description:
+      "Implementation, customization, integration, and ongoing ERP support.",
     icon: Layers,
   },
   {
-    title: "AI & Automation Specialists",
-    description: "Modern AI solutions focused on business outcomes.",
-    icon: Brain,
+    title: "Reporting & Dashboard Expertise",
+    description:
+      "KPI dashboards, Oracle reports, and operational visibility for management teams.",
+    icon: BarChart3,
   },
   {
-    title: "Custom Development Capability",
-    description: "Solutions tailored to unique business requirements.",
-    icon: Wrench,
-  },
-  {
-    title: "Industry-Focused Approach",
-    description: "Understanding of operational and compliance challenges.",
+    title: "Practical Implementation Approach",
+    description:
+      "Solutions designed to reduce manual work and improve process control.",
     icon: Target,
   },
   {
-    title: "Scalable Technology",
-    description: "Solutions designed to grow with businesses.",
-    icon: Scale,
-  },
-  {
-    title: "Reliable Support",
-    description: "Long-term implementation and support partnership.",
+    title: "Long-Term Support Partnership",
+    description:
+      "Reliable delivery, maintenance, and support after go-live.",
     icon: HeadphonesIcon,
   },
 ];
@@ -60,41 +67,35 @@ export default function WhyChooseSection() {
           className={`text-center mb-16 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ""}`}
         >
           <h2 id="why-choose-heading" className="text-4xl md:text-5xl font-bold mb-6">
-            Why Businesses Choose <span className="text-gradient-red">ISD Solutions</span>
+            Why Choose <span className="text-gradient-red">ISD Solutions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A trusted technology partner committed to delivering enterprise solutions
-            that drive efficiency, innovation, and sustainable growth.
+            A partner focused on ERP delivery, custom software, reporting, and dependable support.
           </p>
         </header>
 
         <div
           ref={gridRef as React.RefObject<HTMLElement>}
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${scaleIn} ${gridVisible ? scaleInVisible : ""}`}
-          role="list"
-          aria-label="Reasons to choose ISD Solutions"
         >
           {reasons.map((reason, index) => (
             <Card
               key={reason.title}
-              className="bg-card border-border card-hover group transform hover:scale-105 transition-all duration-500"
+              className="bg-card border-border card-hover group"
               style={{
                 animation: gridVisible
                   ? `slideInUp 0.6s ease-out ${index * 0.08}s both`
                   : "none",
               }}
-              role="listitem"
             >
               <CardContent className="p-8">
-                <div className="text-3xl text-primary-red mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <reason.icon aria-hidden="true" />
+                <div className="mb-5">
+                  <SectionIcon icon={reason.icon} className="group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary-red transition-colors duration-300">
                   {reason.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                  {reason.description}
-                </p>
+                <p className="text-muted-foreground leading-relaxed">{reason.description}</p>
               </CardContent>
             </Card>
           ))}

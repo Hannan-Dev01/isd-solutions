@@ -1,27 +1,28 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
-import { Building2, Cpu, HeadphonesIcon, Layers } from "lucide-react";
+import { BarChart3, Code, Database, HeadphonesIcon } from "lucide-react";
 import { useScrollAnimation } from "../lib/scroll-animations";
+import { SectionIcon } from "../lib/section-icon";
 
 const trustItems = [
   {
-    title: "Enterprise Solutions",
-    description: "Scalable solutions designed for growing businesses.",
-    icon: Building2,
+    title: "ERP Implementation",
+    description: "ERPNext, Odoo, and Oracle EBS with modules aligned to your operations.",
+    icon: Database,
   },
   {
-    title: "ERP Expertise",
-    description: "Implementation, customization, and integration services.",
-    icon: Layers,
+    title: "Custom Development",
+    description: "Applications built in the stack that fits your budget and integration needs.",
+    icon: Code,
   },
   {
-    title: "AI & Automation",
-    description: "Modern AI-powered business transformation.",
-    icon: Cpu,
+    title: "Reporting & Dashboards",
+    description: "KPI views and executive reporting for faster operational decisions.",
+    icon: BarChart3,
   },
   {
     title: "Long-Term Support",
-    description: "Reliable implementation and support services.",
+    description: "Implementation, maintenance, and practical business-focused delivery.",
     icon: HeadphonesIcon,
   },
 ];
@@ -46,38 +47,32 @@ export default function TrustSection() {
             Why Businesses <span className="text-gradient-red">Trust ISD Solutions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We partner with organizations to deliver enterprise-grade technology solutions
-            with a focus on reliability, scalability, and long-term business value.
+            Focused on ERP delivery, custom software, reporting visibility, and dependable support.
           </p>
         </header>
 
         <div
           ref={cardsRef as React.RefObject<HTMLElement>}
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ${scaleIn} ${cardsVisible ? scaleInVisible : ""}`}
-          role="list"
-          aria-label="Trust and credibility highlights"
         >
           {trustItems.map((item, index) => (
             <Card
               key={item.title}
-              className="bg-card border-border card-hover group text-center transform hover:scale-105 transition-all duration-500"
+              className="bg-card border-border card-hover group text-center"
               style={{
                 animation: cardsVisible
                   ? `slideInUp 0.6s ease-out ${index * 0.1}s both`
                   : "none",
               }}
-              role="listitem"
             >
               <CardContent className="p-8">
-                <div className="text-4xl text-primary-red mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto w-fit">
-                  <item.icon aria-hidden="true" />
+                <div className="mx-auto mb-4 w-fit">
+                  <SectionIcon icon={item.icon} className="group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary-red transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm group-hover:text-foreground transition-colors duration-300">
-                  {item.description}
-                </p>
+                <p className="text-muted-foreground text-sm">{item.description}</p>
               </CardContent>
             </Card>
           ))}

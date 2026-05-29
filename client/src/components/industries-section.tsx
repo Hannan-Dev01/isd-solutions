@@ -9,6 +9,7 @@ import {
   Ship,
 } from "lucide-react";
 import { useScrollAnimation } from "../lib/scroll-animations";
+import { SectionIcon } from "../lib/section-icon";
 
 const industries = [
   {
@@ -59,7 +60,7 @@ export default function IndustriesSection() {
   const scaleInVisible = "opacity-100 scale-100";
 
   return (
-    <section className="py-20 bg-background" aria-labelledby="industries-heading">
+    <section id="industries" className="py-20 bg-background scroll-mt-20" aria-labelledby="industries-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header
           ref={headerRef as React.RefObject<HTMLElement>}
@@ -92,8 +93,8 @@ export default function IndustriesSection() {
               role="listitem"
             >
               <CardContent className="p-8">
-                <div className="text-4xl text-primary-red mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <industry.icon aria-hidden="true" />
+                <div className="mb-6">
+                  <SectionIcon icon={industry.icon} className="group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary-red transition-colors duration-300">
                   {industry.title}

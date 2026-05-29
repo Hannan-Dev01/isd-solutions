@@ -1,33 +1,36 @@
 import React, { useEffect } from "react";
 import HeroSection from "../components/hero-section";
 import TrustSection from "../components/trust-section";
-import ServicesSection from "../components/services-section";
-import AiSolutionsSection from "../components/ai-solutions-section";
 import ErpSection from "../components/erp-section";
-import TechnologySection from "../components/technology-section";
-import IndustriesSection from "../components/industries-section";
+import CustomDevelopmentSection from "../components/custom-development-section";
+import ServicesSection from "../components/services-section";
 import CaseStudiesSection from "../components/case-studies-section";
+import IndustriesSection from "../components/industries-section";
+import TechnologyStripSection from "../components/technology-strip-section";
 import WhyChooseSection from "../components/why-choose-section";
+import AiSolutionsSection from "../components/ai-solutions-section";
 import AboutPreviewSection from "../components/about-preview-section";
 import ClientsSection from "../components/clients-section";
 import ContactSection from "../components/contact-section";
 import { useScrollAnimation } from "../lib/scroll-animations";
+import { scrollToHashOnLoad } from "../lib/scroll-to-section";
 import { Helmet } from "react-helmet";
 
 const SEO_TITLE =
-  "ISD Solutions | ERP, AI, Software Development & Digital Transformation Company";
+  "ISD Solutions | ERP Solutions & Custom Software Development Company";
 const SEO_DESCRIPTION =
-  "ISD Solutions provides ERP implementation, ERPNext, Odoo ERP, Oracle EBS support, AI agents, Agentic AI solutions, custom Laravel development, Python applications, reporting dashboards, FBR digital invoicing, business automation, and enterprise technology solutions.";
+  "ISD Solutions provides ERPNext, Odoo ERP, Oracle EBS support, custom Laravel and Python development, reporting dashboards, FBR digital invoicing, cloud infrastructure, and business automation across Pakistan.";
 
 export default function Home() {
   const [trustRef, trustVisible] = useScrollAnimation(0.2, 200);
-  const [servicesRef, servicesVisible] = useScrollAnimation(0.2, 200);
-  const [aiRef, aiVisible] = useScrollAnimation(0.2, 200);
   const [erpRef, erpVisible] = useScrollAnimation(0.2, 200);
-  const [techRef, techVisible] = useScrollAnimation(0.2, 200);
-  const [industriesRef, industriesVisible] = useScrollAnimation(0.2, 200);
+  const [customDevRef, customDevVisible] = useScrollAnimation(0.2, 200);
+  const [servicesRef, servicesVisible] = useScrollAnimation(0.2, 200);
   const [caseStudiesRef, caseStudiesVisible] = useScrollAnimation(0.2, 200);
+  const [industriesRef, industriesVisible] = useScrollAnimation(0.2, 200);
+  const [techRef, techVisible] = useScrollAnimation(0.2, 200);
   const [whyChooseRef, whyChooseVisible] = useScrollAnimation(0.2, 200);
+  const [aiRef, aiVisible] = useScrollAnimation(0.2, 200);
   const [aboutRef, aboutVisible] = useScrollAnimation(0.2, 200);
   const [clientsRef, clientsVisible] = useScrollAnimation(0.2, 200);
   const [contactRef, contactVisible] = useScrollAnimation(0.2, 200);
@@ -38,11 +41,11 @@ export default function Home() {
     if (metaDescription) {
       metaDescription.setAttribute("content", SEO_DESCRIPTION);
     }
+    scrollToHashOnLoad();
   }, []);
 
   const fadeInUp = "opacity-0 translate-y-12 transition-all duration-1000 ease-out";
   const fadeInUpVisible = "opacity-100 translate-y-0";
-
   const animatedSection = (visible: boolean) =>
     `${fadeInUp} ${visible ? fadeInUpVisible : ""}`;
 
@@ -53,39 +56,14 @@ export default function Home() {
         <meta name="description" content={SEO_DESCRIPTION} />
         <meta
           name="keywords"
-          content="ERP Implementation, Odoo ERP, ERPNext, Oracle EBS, AI Solutions, Agentic AI, Laravel Development, Python Development, FBR Digital Invoicing, Business Automation, Digital Transformation, Enterprise Software, Pakistan"
+          content="ERP Solutions, ERPNext, Odoo ERP, Oracle EBS, Custom Software Development, Laravel Development, Python Development, Reporting Dashboards, FBR Digital Invoicing, Business Automation, Pakistan"
         />
         <link rel="canonical" href="https://isdsolutions.org/" />
-
         <meta property="og:title" content={SEO_TITLE} />
         <meta property="og:description" content={SEO_DESCRIPTION} />
         <meta property="og:url" content="https://isdsolutions.org/" />
-        <meta property="og:type" content="website" />
-
         <meta name="twitter:title" content={SEO_TITLE} />
         <meta name="twitter:description" content={SEO_DESCRIPTION} />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: SEO_TITLE,
-            description: SEO_DESCRIPTION,
-            url: "https://isdsolutions.org/",
-            mainEntity: {
-              "@type": "Organization",
-              name: "ISD Solutions",
-              description: SEO_DESCRIPTION,
-              url: "https://isdsolutions.org",
-              logo: "https://isdsolutions.org/assets/images/isd-logo-light.svg",
-              sameAs: [
-                "https://facebook.com/isdsolutions",
-                "https://twitter.com/isdsolutions",
-                "https://linkedin.com/company/isdsolutions",
-              ],
-            },
-          })}
-        </script>
       </Helmet>
 
       <div className="pt-16">
@@ -101,43 +79,27 @@ export default function Home() {
         </div>
 
         <section
-          ref={servicesRef as React.RefObject<HTMLElement>}
-          className={animatedSection(servicesVisible)}
-          aria-label="Our Services"
-        >
-          <ServicesSection />
-        </section>
-
-        <section
-          ref={aiRef as React.RefObject<HTMLElement>}
-          className={animatedSection(aiVisible)}
-          aria-label="Enterprise AI Solutions"
-        >
-          <AiSolutionsSection />
-        </section>
-
-        <section
           ref={erpRef as React.RefObject<HTMLElement>}
           className={animatedSection(erpVisible)}
-          aria-label="ERP and Enterprise Application Expertise"
+          aria-label="ERP Solutions"
         >
           <ErpSection />
         </section>
 
         <section
-          ref={techRef as React.RefObject<HTMLElement>}
-          className={animatedSection(techVisible)}
-          aria-label="Technology Expertise"
+          ref={customDevRef as React.RefObject<HTMLElement>}
+          className={animatedSection(customDevVisible)}
+          aria-label="Custom Development"
         >
-          <TechnologySection />
+          <CustomDevelopmentSection />
         </section>
 
         <section
-          ref={industriesRef as React.RefObject<HTMLElement>}
-          className={animatedSection(industriesVisible)}
-          aria-label="Industries Served"
+          ref={servicesRef as React.RefObject<HTMLElement>}
+          className={animatedSection(servicesVisible)}
+          aria-label="Our Services"
         >
-          <IndustriesSection />
+          <ServicesSection />
         </section>
 
         <section
@@ -149,11 +111,35 @@ export default function Home() {
         </section>
 
         <section
+          ref={industriesRef as React.RefObject<HTMLElement>}
+          className={animatedSection(industriesVisible)}
+          aria-label="Industries Served"
+        >
+          <IndustriesSection />
+        </section>
+
+        <section
+          ref={techRef as React.RefObject<HTMLElement>}
+          className={animatedSection(techVisible)}
+          aria-label="Technologies We Work With"
+        >
+          <TechnologyStripSection />
+        </section>
+
+        <section
           ref={whyChooseRef as React.RefObject<HTMLElement>}
           className={animatedSection(whyChooseVisible)}
           aria-label="Why choose ISD Solutions"
         >
           <WhyChooseSection />
+        </section>
+
+        <section
+          ref={aiRef as React.RefObject<HTMLElement>}
+          className={animatedSection(aiVisible)}
+          aria-label="AI and Automation"
+        >
+          <AiSolutionsSection />
         </section>
 
         <section

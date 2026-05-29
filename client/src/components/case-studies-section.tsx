@@ -7,28 +7,28 @@ import { useScrollAnimation } from "../lib/scroll-animations";
 
 const caseStudies = [
   {
-    title: "FBR Digital Invoicing Automation",
-    challenge: "Manual invoicing and compliance processes.",
-    solution: "Integrated digital invoicing automation platform.",
-    result: "Improved compliance and operational efficiency.",
+    title: "ERP Implementation & Customization",
+    challenge: "Manual or disconnected business processes.",
+    solution: "ERP configuration, customization, reporting, and integration.",
+    result: "Better process control and business visibility.",
   },
   {
-    title: "ERP Reporting & Analytics",
-    challenge: "Limited operational visibility.",
-    solution: "Executive dashboards and KPI reporting.",
-    result: "Better decision-making and reporting.",
+    title: "Custom Business Management System",
+    challenge: "Operations handled through Excel, email, or manual approvals.",
+    solution: "Custom web portal with workflows, roles, dashboards, and reports.",
+    result: "Faster operations and improved accountability.",
   },
   {
-    title: "AI-Powered Knowledge Assistant",
-    challenge: "Difficulty accessing organizational knowledge.",
-    solution: "Enterprise AI search platform.",
-    result: "Faster information retrieval.",
+    title: "Reporting & Executive Dashboard",
+    challenge: "Management lacks real-time visibility.",
+    solution: "KPI dashboards, Oracle reports, BI views, and automated reporting.",
+    result: "Faster decision-making.",
   },
   {
-    title: "Custom Business Portal",
-    challenge: "Manual business workflows.",
-    solution: "Custom web portal and automation system.",
-    result: "Improved productivity and process control.",
+    title: "Digital Invoicing & Compliance",
+    challenge: "Manual tax invoice preparation and compliance effort.",
+    solution: "FBR digital invoicing integration and tracking system.",
+    result: "Improved compliance and reduced manual work.",
   },
 ];
 
@@ -52,16 +52,14 @@ export default function CaseStudiesSection() {
             Case <span className="text-gradient-red">Studies</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real-world solutions delivering measurable business outcomes across
-            ERP, compliance, AI, and custom development.
+            How we help businesses improve operations through ERP, custom systems,
+            reporting, and compliance solutions.
           </p>
         </header>
 
         <div
           ref={gridRef as React.RefObject<HTMLElement>}
           className={`grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 ${scaleIn} ${gridVisible ? scaleInVisible : ""}`}
-          role="list"
-          aria-label="Case studies"
         >
           {caseStudies.map((study, index) => (
             <Card
@@ -72,7 +70,6 @@ export default function CaseStudiesSection() {
                   ? `slideInUp 0.6s ease-out ${index * 0.1}s both`
                   : "none",
               }}
-              role="listitem"
             >
               <CardContent className="p-8">
                 <h3 className="text-xl font-bold mb-5 text-foreground group-hover:text-primary-red transition-colors duration-300">
@@ -80,7 +77,7 @@ export default function CaseStudiesSection() {
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm font-semibold text-primary-red mb-1">Challenge</p>
+                    <p className="text-sm font-semibold text-primary-red mb-1">Problem</p>
                     <p className="text-muted-foreground">{study.challenge}</p>
                   </div>
                   <div>
