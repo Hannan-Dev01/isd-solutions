@@ -11,6 +11,7 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import Services from "./pages/services";
 import Projects from "./pages/projects";
+import ProjectDetail from "./pages/project-detail";
 import Testimonials from "./pages/testimonials";
 import Contact from "./pages/contact";
 import PrivacyPolicy from "./pages/privacy-policy";
@@ -63,11 +64,12 @@ function AppContent() {
         {/* Canonical URL */}
         <link rel="canonical" href="https://isdsolutions.org/" />
         
-        {/* Favicon and Icons */}
-        <link rel="icon" type="image/svg+xml" href="/assets/images/isd-logo-light.svg" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/apple-icon.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/apple-icon.png" />
+        {/* Favicon and Icons (ISD logo mark) */}
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -141,6 +143,7 @@ function AppContent() {
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/services" component={Services} />
+          <Route path="/projects/:slug" component={ProjectDetail} />
           <Route path="/projects" component={Projects} />
           <Route path="/testimonials" component={Testimonials} />
           <Route path="/contact" component={Contact} />

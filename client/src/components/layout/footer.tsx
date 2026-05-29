@@ -94,7 +94,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/testimonials" className="text-muted-foreground hover:text-primary-red transition-colors duration-300">
-                  Testimonials
+                  Implementation Experience
                 </Link>
               </li>
               <li>

@@ -153,7 +153,7 @@ export default function Home() {
         <section
           ref={clientsRef as React.RefObject<HTMLElement>}
           className={animatedSection(clientsVisible)}
-          aria-label="Our Clients and Testimonials"
+          aria-label="Implementation Experience"
         >
           <ClientsSection />
         </section>

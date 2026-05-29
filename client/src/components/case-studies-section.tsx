@@ -4,33 +4,7 @@ import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useScrollAnimation } from "../lib/scroll-animations";
-
-const caseStudies = [
-  {
-    title: "ERP Implementation & Customization",
-    challenge: "Manual or disconnected business processes.",
-    solution: "ERP configuration, customization, reporting, and integration.",
-    result: "Better process control and business visibility.",
-  },
-  {
-    title: "Custom Business Management System",
-    challenge: "Operations handled through Excel, email, or manual approvals.",
-    solution: "Custom web portal with workflows, roles, dashboards, and reports.",
-    result: "Faster operations and improved accountability.",
-  },
-  {
-    title: "Reporting & Executive Dashboard",
-    challenge: "Management lacks real-time visibility.",
-    solution: "KPI dashboards, Oracle reports, BI views, and automated reporting.",
-    result: "Faster decision-making.",
-  },
-  {
-    title: "Digital Invoicing & Compliance",
-    challenge: "Manual tax invoice preparation and compliance effort.",
-    solution: "FBR digital invoicing integration and tracking system.",
-    result: "Improved compliance and reduced manual work.",
-  },
-];
+import { solutionShowcase } from "../lib/solution-showcase-data";
 
 export default function CaseStudiesSection() {
   const [headerRef, headerVisible] = useScrollAnimation(0.2, 200);
@@ -42,18 +16,21 @@ export default function CaseStudiesSection() {
   const scaleInVisible = "opacity-100 scale-100";
 
   return (
-    <section className="py-20 bg-muted/30" aria-labelledby="case-studies-heading">
+    <section className="py-20 bg-muted/30" aria-labelledby="solution-showcase-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header
           ref={headerRef as React.RefObject<HTMLElement>}
           className={`text-center mb-16 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ""}`}
         >
-          <h2 id="case-studies-heading" className="text-4xl md:text-5xl font-bold mb-6">
-            Case <span className="text-gradient-red">Studies</span>
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary-red mb-3">
+            Business Solutions Delivered
+          </p>
+          <h2 id="solution-showcase-heading" className="text-4xl md:text-5xl font-bold mb-6">
+            Solution <span className="text-gradient-red">Showcase</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            How we help businesses improve operations through ERP, custom systems,
-            reporting, and compliance solutions.
+            Anonymous examples of ERP, custom development, reporting, compliance, and
+            automation work delivered across industries.
           </p>
         </header>
 
@@ -61,9 +38,9 @@ export default function CaseStudiesSection() {
           ref={gridRef as React.RefObject<HTMLElement>}
           className={`grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 ${scaleIn} ${gridVisible ? scaleInVisible : ""}`}
         >
-          {caseStudies.map((study, index) => (
+          {solutionShowcase.map((item, index) => (
             <Card
-              key={study.title}
+              key={item.title}
               className="bg-card border-border card-hover group overflow-hidden"
               style={{
                 animation: gridVisible
@@ -72,25 +49,35 @@ export default function CaseStudiesSection() {
               }}
             >
               <CardContent className="p-8">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary-red mb-2">
+                  {item.industry}
+                </p>
                 <h3 className="text-xl font-bold mb-5 text-foreground group-hover:text-primary-red transition-colors duration-300">
-                  {study.title}
+                  {item.title}
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm font-semibold text-primary-red mb-1">Problem</p>
-                    <p className="text-muted-foreground">{study.challenge}</p>
+                    <p className="text-sm font-semibold text-primary-red mb-1">Challenge</p>
+                    <p className="text-muted-foreground">{item.challenge}</p>
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-primary-red mb-1">Solution</p>
-                    <p className="text-muted-foreground">{study.solution}</p>
+                    <p className="text-muted-foreground">{item.solution}</p>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary-red flex-shrink-0 mt-0.5" size={18} aria-hidden="true" />
                     <div>
-                      <p className="text-sm font-semibold text-foreground mb-1">Result</p>
-                      <p className="text-muted-foreground">{study.result}</p>
+                      <p className="text-sm font-semibold text-foreground mb-1">Business Impact</p>
+                      <p className="text-muted-foreground">{item.impact}</p>
                     </div>
                   </div>
+                  <Link
+                    href={`/projects/${item.slug}`}
+                    className="inline-flex items-center text-sm font-semibold text-primary-red hover:underline mt-2"
+                  >
+                    View Implementation Details
+                    <ArrowRight className="ml-1" size={14} aria-hidden="true" />
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -100,7 +87,7 @@ export default function CaseStudiesSection() {
         <div className="text-center">
           <Link href="/projects">
             <Button variant="outline" size="lg" className="group">
-              View All Projects
+              View All Project Experience
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} aria-hidden="true" />
             </Button>
           </Link>

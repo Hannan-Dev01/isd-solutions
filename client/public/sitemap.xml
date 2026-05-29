@@ -19,10 +19,58 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://isdsolutions.com/projects</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://isdsolutions.org/projects</loc>
+    <lastmod>2025-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://isdsolutions.org/projects/erp-implementation-customization</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://isdsolutions.org/projects/digital-invoicing-platform</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://isdsolutions.org/projects/executive-kpi-dashboard</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://isdsolutions.org/projects/enterprise-hr-portal</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://isdsolutions.org/projects/ai-knowledge-assistant</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://isdsolutions.org/projects/erpnext-business-automation</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://isdsolutions.org/projects/oracle-ebs-upgrade-support</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://isdsolutions.org/projects/field-operations-mobile-app</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://isdsolutions.com/testimonials</loc>

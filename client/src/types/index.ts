@@ -2,6 +2,7 @@
 
 export interface Project {
   id: string;
+  slug: string;
   title: string;
   description: string;
   image: string;
@@ -10,6 +11,35 @@ export interface Project {
   clientName?: string;
   completedDate?: string;
   projectUrl?: string;
+  /** Detail page fields */
+  tagline?: string;
+  categoryLabel?: string;
+  summary?: string;
+  overview?: string;
+  challenges?: string[];
+  solution?: string;
+  features?: { title: string; description: string }[];
+  businessImpact?: string[];
+  relatedServices?: { label: string; href: string }[];
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string;
+}
+
+export interface ProjectDetail extends Project {
+  industry: string;
+  tagline: string;
+  categoryLabel: string;
+  summary: string;
+  overview: string;
+  challenges: string[];
+  solution: string;
+  features: { title: string; description: string }[];
+  businessImpact: string[];
+  relatedServices: { label: string; href: string }[];
+  seoTitle: string;
+  seoDescription: string;
+  seoKeywords: string;
 }
 
 export interface Testimonial {
