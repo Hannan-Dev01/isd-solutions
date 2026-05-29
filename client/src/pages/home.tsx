@@ -3,6 +3,8 @@ import HeroSection from "../components/hero-section";
 import TrustSection from "../components/trust-section";
 import ErpSection from "../components/erp-section";
 import CustomDevelopmentSection from "../components/custom-development-section";
+import ReportingSection from "../components/reporting-section";
+import DigitalInvoicingSection from "../components/digital-invoicing-section";
 import ServicesSection from "../components/services-section";
 import CaseStudiesSection from "../components/case-studies-section";
 import IndustriesSection from "../components/industries-section";
@@ -25,6 +27,8 @@ export default function Home() {
   const [trustRef, trustVisible] = useScrollAnimation(0.2, 200);
   const [erpRef, erpVisible] = useScrollAnimation(0.2, 200);
   const [customDevRef, customDevVisible] = useScrollAnimation(0.2, 200);
+  const [reportingRef, reportingVisible] = useScrollAnimation(0.2, 200);
+  const [invoicingRef, invoicingVisible] = useScrollAnimation(0.2, 200);
   const [servicesRef, servicesVisible] = useScrollAnimation(0.2, 200);
   const [caseStudiesRef, caseStudiesVisible] = useScrollAnimation(0.2, 200);
   const [industriesRef, industriesVisible] = useScrollAnimation(0.2, 200);
@@ -72,7 +76,7 @@ export default function Home() {
           <section
             ref={trustRef as React.RefObject<HTMLElement>}
             className={animatedSection(trustVisible)}
-            aria-label="Why businesses trust ISD Solutions"
+            aria-label="What we deliver"
           >
             <TrustSection />
           </section>
@@ -95,6 +99,22 @@ export default function Home() {
         </section>
 
         <section
+          ref={reportingRef as React.RefObject<HTMLElement>}
+          className={animatedSection(reportingVisible)}
+          aria-label="Reporting and Dashboards"
+        >
+          <ReportingSection />
+        </section>
+
+        <section
+          ref={invoicingRef as React.RefObject<HTMLElement>}
+          className={animatedSection(invoicingVisible)}
+          aria-label="Digital Invoicing"
+        >
+          <DigitalInvoicingSection />
+        </section>
+
+        <section
           ref={servicesRef as React.RefObject<HTMLElement>}
           className={animatedSection(servicesVisible)}
           aria-label="Our Services"
@@ -103,9 +123,17 @@ export default function Home() {
         </section>
 
         <section
+          ref={whyChooseRef as React.RefObject<HTMLElement>}
+          className={animatedSection(whyChooseVisible)}
+          aria-label="Why choose ISD Solutions"
+        >
+          <WhyChooseSection />
+        </section>
+
+        <section
           ref={caseStudiesRef as React.RefObject<HTMLElement>}
           className={animatedSection(caseStudiesVisible)}
-          aria-label="Case Studies"
+          aria-label="Solution Showcase"
         >
           <CaseStudiesSection />
         </section>
@@ -124,14 +152,6 @@ export default function Home() {
           aria-label="Technologies We Work With"
         >
           <TechnologyStripSection />
-        </section>
-
-        <section
-          ref={whyChooseRef as React.RefObject<HTMLElement>}
-          className={animatedSection(whyChooseVisible)}
-          aria-label="Why choose ISD Solutions"
-        >
-          <WhyChooseSection />
         </section>
 
         <section

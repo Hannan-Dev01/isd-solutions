@@ -8,19 +8,19 @@ const aiSolutions = [
   {
     title: "Enterprise AI Solutions",
     description:
-      "AI assistants, business chatbots, document intelligence, and enterprise knowledge search for internal business operations.",
+      "Use AI to search documents, answer business questions, and support internal teams with approved knowledge sources.",
     icon: Brain,
   },
   {
     title: "Agentic AI & Automation",
     description:
-      "Multi-step AI workflows that help automate approvals, reporting, analysis, customer support, and internal processes.",
+      "Automate approvals, reporting steps, analysis, and routine operational workflows.",
     icon: Bot,
   },
   {
     title: "Private AI & RAG Platforms",
     description:
-      "Secure private AI systems using enterprise documents, databases, vector search, and controlled access.",
+      "Secure search across enterprise documents and databases with controlled access.",
     icon: Shield,
   },
 ];
@@ -37,29 +37,29 @@ export default function AiSolutionsSection() {
   return (
     <section
       id="ai-automation"
-      className="py-20 bg-muted/30 scroll-mt-20"
+      className="py-16 bg-background scroll-mt-20 border-t border-border"
       aria-labelledby="ai-solutions-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header
           ref={headerRef as React.RefObject<HTMLElement>}
-          className={`text-center mb-16 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ""}`}
+          className={`text-center mb-12 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ""}`}
         >
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary-red mb-3">
+          <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
             Supporting Capability
           </p>
-          <h2 id="ai-solutions-heading" className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 id="ai-solutions-heading" className="text-3xl md:text-4xl font-bold mb-4">
             AI & <span className="text-gradient-red">Automation</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Practical AI capabilities that support ERP, reporting, and custom systems —
-            not a replacement for core business software.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            AI supports ERP, reporting, and custom systems — helping teams find information
+            faster and automate selected business processes.
           </p>
         </header>
 
         <div
           ref={gridRef as React.RefObject<HTMLElement>}
-          className={`grid grid-cols-1 md:grid-cols-3 gap-8 ${scaleIn} ${gridVisible ? scaleInVisible : ""}`}
+          className={`grid grid-cols-1 md:grid-cols-3 gap-6 ${scaleIn} ${gridVisible ? scaleInVisible : ""}`}
         >
           {aiSolutions.map((solution, index) => (
             <Card
@@ -71,14 +71,14 @@ export default function AiSolutionsSection() {
                   : "none",
               }}
             >
-              <CardContent className="p-8">
-                <div className="mb-5">
-                  <SectionIcon icon={solution.icon} className="group-hover:scale-110 transition-transform duration-300" />
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <SectionIcon icon={solution.icon} size="sm" className="group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary-red transition-colors duration-300">
+                <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary-red transition-colors duration-300">
                   {solution.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   {solution.description}
                 </p>
               </CardContent>

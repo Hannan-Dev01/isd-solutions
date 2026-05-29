@@ -31,7 +31,7 @@ export default function AboutPreviewSection() {
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               We help organizations reduce manual work, improve reporting visibility,
-              automate approvals, integrate ERP with business systems, and build scalable
+              automate approvals, integrate ERP with business systems, and deliver
               applications for finance, HR, inventory, sales, and manufacturing.
             </p>
             <Link href="/about">

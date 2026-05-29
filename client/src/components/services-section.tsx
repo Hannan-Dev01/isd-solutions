@@ -5,11 +5,12 @@ import { Button } from "./ui/button";
 import {
   ArrowRight,
   BarChart3,
-  Bot,
-  Cloud,
+  Brain,
   Code,
   Database,
+  LineChart,
   Receipt,
+  Server,
 } from "lucide-react";
 import { useScrollAnimation } from "../lib/scroll-animations";
 import { SectionIcon } from "../lib/section-icon";
@@ -52,7 +53,7 @@ const serviceGroups: ServiceGroup[] = [
   },
   {
     title: "Reporting & Analytics",
-    icon: BarChart3,
+    icon: LineChart,
     items: [
       "KPI Dashboards",
       "Executive Dashboards",
@@ -74,7 +75,7 @@ const serviceGroups: ServiceGroup[] = [
   },
   {
     title: "Cloud & Infrastructure",
-    icon: Cloud,
+    icon: Server,
     items: [
       "VPS Management",
       "Linux Servers",
@@ -85,7 +86,7 @@ const serviceGroups: ServiceGroup[] = [
   },
   {
     title: "AI & Automation",
-    icon: Bot,
+    icon: Brain,
     items: [
       "Enterprise AI",
       "Agentic AI",
@@ -120,8 +121,8 @@ export default function ServicesSection() {
             Our <span className="text-gradient-red">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Structured capabilities across ERP, custom development, reporting,
-            compliance, infrastructure, and automation.
+            End-to-end delivery across ERP, custom software, reporting, compliance,
+            infrastructure, and automation — aligned to how your business operates.
           </p>
         </header>
 

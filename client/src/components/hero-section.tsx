@@ -51,9 +51,8 @@ export default function HeroSection() {
         </header>
 
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-          ISD Solutions helps businesses implement ERP systems, build custom applications,
-          automate operations, integrate enterprise platforms, and develop reporting
-          dashboards using modern and scalable technologies.
+          We help businesses implement ERP systems, automate operations, improve reporting
+          visibility, and build custom applications that fit how your teams work.
         </p>
 
         <ul className="flex flex-wrap justify-center gap-4 mb-10 list-none p-0">

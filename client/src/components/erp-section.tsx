@@ -7,10 +7,10 @@ import {
   Boxes,
   Building2,
   Calculator,
+  Database,
   Factory,
   HeadphonesIcon,
   Link2,
-  Settings,
   ShoppingCart,
   Truck,
   UserCheck,
@@ -20,12 +20,15 @@ import { useScrollAnimation } from "../lib/scroll-animations";
 import { SectionIcon } from "../lib/section-icon";
 import type { LucideIcon } from "lucide-react";
 
+const erpPlatforms = [
+  { name: "ERPNext", icon: Boxes },
+  { name: "Odoo ERP", icon: Building2 },
+  { name: "Oracle EBS", icon: Database },
+];
+
 const erpExpertise: { name: string; icon: LucideIcon }[] = [
-  { name: "ERPNext Implementation", icon: Boxes },
-  { name: "Odoo ERP Implementation", icon: Building2 },
-  { name: "Oracle E-Business Suite Support", icon: Calculator },
-  { name: "Finance & Accounting", icon: Calculator },
   { name: "HR & Payroll", icon: UserCheck },
+  { name: "Finance & Accounting", icon: Calculator },
   { name: "Inventory & Procurement", icon: Truck },
   { name: "Manufacturing", icon: Factory },
   { name: "Sales & Distribution", icon: ShoppingCart },
@@ -37,6 +40,7 @@ const erpExpertise: { name: string; icon: LucideIcon }[] = [
 
 export default function ErpSection() {
   const [headerRef, headerVisible] = useScrollAnimation(0.2, 200);
+  const [platformRef, platformVisible] = useScrollAnimation(0.2, 300);
   const [gridRef, gridVisible] = useScrollAnimation(0.2, 400);
 
   const fadeInUp = "opacity-0 translate-y-12 transition-all duration-1000 ease-out";
@@ -47,26 +51,47 @@ export default function ErpSection() {
   return (
     <section
       id="erp-solutions"
-      className="py-20 bg-background scroll-mt-20"
+      className="py-24 bg-muted/40 border-y border-border scroll-mt-20 relative overflow-hidden"
       aria-labelledby="erp-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 bg-gradient-red opacity-[0.04]" aria-hidden="true" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header
           ref={headerRef as React.RefObject<HTMLElement>}
-          className={`text-center mb-16 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ""}`}
+          className={`text-center mb-12 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ""}`}
         >
-          <div className="inline-flex items-center gap-2 mb-4">
-            <SectionIcon icon={Settings} />
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary-red mb-3">
+            Core Strength
+          </p>
+          <div className="flex justify-center mb-6">
+            <SectionIcon icon={Database} size="lg" />
           </div>
           <h2 id="erp-heading" className="text-4xl md:text-5xl font-bold mb-6">
             ERP <span className="text-gradient-red">Solutions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Implement and support ERP systems that connect finance, HR, inventory,
-            manufacturing, and sales — with customization, integration, and reporting
-            built around how your business operates.
+            We help businesses connect finance, HR, inventory, manufacturing, and sales in one
+            system — with implementation, customization, integration, and reporting that
+            reduces manual work and improves operational control.
           </p>
         </header>
+
+        <div
+          ref={platformRef as React.RefObject<HTMLElement>}
+          className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto ${scaleIn} ${platformVisible ? scaleInVisible : ""}`}
+        >
+          {erpPlatforms.map((platform) => (
+            <div
+              key={platform.name}
+              className="bg-card border-2 border-primary-red/20 rounded-xl p-6 text-center hover:border-primary-red/50 transition-all duration-300 group"
+            >
+              <div className="flex justify-center mb-3">
+                <SectionIcon icon={platform.icon} className="group-hover:scale-110" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground">{platform.name}</h3>
+            </div>
+          ))}
+        </div>
 
         <div
           ref={gridRef as React.RefObject<HTMLElement>}
@@ -82,7 +107,7 @@ export default function ErpSection() {
                   : "none",
               }}
             >
-              <SectionIcon icon={item.icon} className="group-hover:scale-110 transition-transform duration-300" />
+              <SectionIcon icon={item.icon} className="group-hover:scale-110" />
               <span className="text-sm font-medium text-foreground leading-tight">{item.name}</span>
             </div>
           ))}

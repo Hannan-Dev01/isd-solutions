@@ -6,46 +6,46 @@ import {
   Database,
   HeadphonesIcon,
   Layers,
-  Target,
+  Receipt,
 } from "lucide-react";
 import { useScrollAnimation } from "../lib/scroll-animations";
 import { SectionIcon } from "../lib/section-icon";
 
 const reasons = [
   {
-    title: "ERP & Business Process Understanding",
+    title: "ERP Expertise",
     description:
-      "Experience across finance, HR, inventory, manufacturing, and sales operations.",
+      "Deep understanding of business processes, finance, inventory, HR, manufacturing, and enterprise operations.",
     icon: Database,
   },
   {
-    title: "Custom Development Across Stacks",
+    title: "Custom Development Flexibility",
     description:
-      "Laravel, Python, FastAPI, APIs, portals, and workflow systems tailored to your needs.",
+      "Solutions built using the best technology stack for business requirements.",
     icon: Code,
   },
   {
-    title: "Oracle, ERPNext & Odoo Experience",
+    title: "Reporting & Analytics Expertise",
     description:
-      "Implementation, customization, integration, and ongoing ERP support.",
-    icon: Layers,
-  },
-  {
-    title: "Reporting & Dashboard Expertise",
-    description:
-      "KPI dashboards, Oracle reports, and operational visibility for management teams.",
+      "Executive dashboards, KPI monitoring, and operational visibility.",
     icon: BarChart3,
   },
   {
-    title: "Practical Implementation Approach",
+    title: "Digital Compliance Experience",
     description:
-      "Solutions designed to reduce manual work and improve process control.",
-    icon: Target,
+      "FBR Digital Invoicing and compliance-focused solutions.",
+    icon: Receipt,
   },
   {
-    title: "Long-Term Support Partnership",
+    title: "Technology Versatility",
     description:
-      "Reliable delivery, maintenance, and support after go-live.",
+      "Laravel, Python, ERPNext, Odoo, Oracle, APIs, Cloud, AI.",
+    icon: Layers,
+  },
+  {
+    title: "Long-Term Partnership",
+    description:
+      "Implementation, support, enhancement, and maintenance services.",
     icon: HeadphonesIcon,
   },
 ];
@@ -60,17 +60,18 @@ export default function WhyChooseSection() {
   const scaleInVisible = "opacity-100 scale-100";
 
   return (
-    <section className="py-20 bg-background" aria-labelledby="why-choose-heading">
+    <section className="py-24 bg-muted/30 border-y border-border" aria-labelledby="why-choose-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header
           ref={headerRef as React.RefObject<HTMLElement>}
           className={`text-center mb-16 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ""}`}
         >
           <h2 id="why-choose-heading" className="text-4xl md:text-5xl font-bold mb-6">
-            Why Choose <span className="text-gradient-red">ISD Solutions</span>
+            Why Businesses Choose <span className="text-gradient-red">ISD Solutions</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A partner focused on ERP delivery, custom software, reporting, and dependable support.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            A partner focused on ERP, custom software, reporting, compliance, and dependable
+            delivery — with the flexibility to support long-term business growth.
           </p>
         </header>
 
@@ -81,7 +82,7 @@ export default function WhyChooseSection() {
           {reasons.map((reason, index) => (
             <Card
               key={reason.title}
-              className="bg-card border-border card-hover group"
+              className="bg-card border-border card-hover group h-full"
               style={{
                 animation: gridVisible
                   ? `slideInUp 0.6s ease-out ${index * 0.08}s both`

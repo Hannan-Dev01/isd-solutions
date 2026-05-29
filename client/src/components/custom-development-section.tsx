@@ -56,12 +56,16 @@ export default function CustomDevelopmentSection() {
           ref={headerRef as React.RefObject<HTMLElement>}
           className={`text-center mb-16 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ""}`}
         >
+          <div className="flex justify-center mb-6">
+            <SectionIcon icon={Code} size="lg" />
+          </div>
           <h2 id="custom-dev-heading" className="text-4xl md:text-5xl font-bold mb-6">
-            Custom Development — <span className="text-gradient-red">Any Stack</span>
+            Custom <span className="text-gradient-red">Development</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We build custom business applications using the technology stack best suited
-            to your operations, budget, scalability, and integration needs.
+            We build portals, workflows, APIs, and integrations that connect with your ERP
+            and existing systems — using Laravel, Python, and other stacks chosen for your
+            business requirements.
           </p>
         </header>
 
