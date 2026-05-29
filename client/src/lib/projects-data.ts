@@ -11,8 +11,16 @@ export const projectCategories = [
   { id: "ai", label: "AI & Automation" },
 ];
 
-const genericImage = (id: string) =>
-  `https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=700&q=80&sig=${id}`;
+const projectImages = {
+  erp: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=700&q=80",
+  fbr: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=700&q=80",
+  dashboard: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=700&q=80",
+  hr: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=700&q=80",
+  ai: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=700&q=80",
+  erpnext: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=700&q=80",
+  oracle: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=700&q=80",
+  mobile: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=700&q=80",
+} as const;
 
 export const projects: ProjectDetail[] = [
   {
@@ -25,7 +33,7 @@ export const projects: ProjectDetail[] = [
       "Odoo ERP implementation with customization for finance, inventory, HR, sales, and operational reporting.",
     category: "odoo",
     categoryLabel: "ERP Implementation",
-    image: genericImage("erp"),
+    image: projectImages.erp,
     technologies: ["Odoo", "PostgreSQL", "Python", "JavaScript"],
     summary:
       "ERP rollout to unify disconnected processes and give management better visibility into operations.",
@@ -74,7 +82,7 @@ export const projects: ProjectDetail[] = [
       "Digital invoicing integration with invoice validation, compliance tracking, and finance reporting.",
     category: "fbr",
     categoryLabel: "Digital Invoicing",
-    image: genericImage("fbr"),
+    image: projectImages.fbr,
     technologies: ["FBR API", "Laravel", "PHP", "MySQL"],
     summary:
       "Digital invoicing platform for compliant tax invoicing, bulk processing, and finance visibility.",
@@ -123,7 +131,7 @@ export const projects: ProjectDetail[] = [
       "Enterprise dashboard with KPI views, Oracle reports, and automated operational reporting.",
     category: "reporting",
     categoryLabel: "Reporting & Dashboards",
-    image: genericImage("dashboard"),
+    image: projectImages.dashboard,
     technologies: ["Oracle Reports", "Oracle Database", "PHP", "MySQL", "REST APIs"],
     summary:
       "Executive reporting solution to centralize KPIs and improve management visibility.",
@@ -172,7 +180,7 @@ export const projects: ProjectDetail[] = [
       "Business HR portal for employee requests, document handling, approvals, and HR reporting.",
     category: "web",
     categoryLabel: "Custom Development",
-    image: genericImage("hr"),
+    image: projectImages.hr,
     technologies: ["Laravel", "PHP", "MySQL", "REST APIs"],
     summary:
       "Custom HR portal to digitize employee processes and improve internal service delivery.",
@@ -221,7 +229,7 @@ export const projects: ProjectDetail[] = [
       "Private AI assistant with RAG, document intelligence, and controlled enterprise search.",
     category: "ai",
     categoryLabel: "AI & Automation",
-    image: genericImage("ai"),
+    image: projectImages.ai,
     technologies: ["Python", "FastAPI", "RAG", "Vector Database", "PostgreSQL"],
     summary:
       "Enterprise knowledge assistant to help teams find policies, procedures, and internal documents faster.",
@@ -270,7 +278,7 @@ export const projects: ProjectDetail[] = [
       "ERPNext rollout for finance, inventory, sales, and customized operational workflows.",
     category: "erp",
     categoryLabel: "ERPNext",
-    image: genericImage("erpnext"),
+    image: projectImages.erpnext,
     technologies: ["ERPNext", "MariaDB", "Python", "Frappe"],
     summary:
       "ERPNext implementation to automate core processes and improve cross-department visibility.",
@@ -319,7 +327,7 @@ export const projects: ProjectDetail[] = [
       "Oracle EBS upgrade support including migration planning, custom reports, and user readiness.",
     category: "erp",
     categoryLabel: "Oracle EBS",
-    image: genericImage("oracle"),
+    image: projectImages.oracle,
     technologies: ["Oracle EBS", "PL/SQL", "Oracle Reports", "Oracle Database"],
     summary:
       "Oracle EBS upgrade engagement focused on stable migration and continued finance and operations reporting.",
@@ -368,7 +376,7 @@ export const projects: ProjectDetail[] = [
       "Cross-platform mobile application with API integration, offline support, and operational dashboards.",
     category: "mobile",
     categoryLabel: "Mobile Application",
-    image: genericImage("mobile"),
+    image: projectImages.mobile,
     technologies: ["React Native", "Laravel", "REST APIs", "PostgreSQL"],
     summary:
       "Mobile solution for field and operational teams with secure access and backend integration.",

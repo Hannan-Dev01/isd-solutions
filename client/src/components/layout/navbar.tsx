@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "../ui/button";
 import { ThemeToggle } from "../theme-toggle";
@@ -14,7 +14,7 @@ const navItems = [
   { label: "Technologies", href: "/", sectionId: "technologies" },
   { label: "Projects", href: "/projects", sectionId: null },
   { label: "Contact", href: "/contact", sectionId: null },
-];
+] as const;
 
 function NavLink({
   children,
@@ -42,7 +42,7 @@ function NavLink({
 
   if (href) {
     return (
-      <Link href={href} className={`group ${className}`}>
+      <Link href={href} className={`group ${className}`} onClick={onClick}>
         {children}
         {underline}
       </Link>
@@ -57,9 +57,36 @@ function NavLink({
   );
 }
 
+function getWindowSafe(): Window | undefined {
+  return typeof window !== "undefined" ? window : undefined;
+}
+
+function resolveActiveLabel(path: string): string {
+  if (path.startsWith("/projects")) return "Projects";
+  if (path === "/contact") return "Contact";
+  if (path !== "/") return "";
+
+  const win = getWindowSafe();
+  if (!win) return "Home";
+
+  const hash = win.location.hash.replace("#", "");
+  if (!hash) return "Home";
+
+  const match = navItems.find((item) => item.sectionId === hash);
+  return match?.label ?? "Home";
+}
+
+function goToHomeTop() {
+  const win = getWindowSafe();
+  if (!win || win.location.pathname !== "/") return;
+  win.history.pushState(null, "", "/");
+  win.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeNavLabel, setActiveNavLabel] = useState("Home");
   const [location] = useLocation();
   const { theme } = useTheme();
 
@@ -67,6 +94,12 @@ export default function Navbar() {
     theme === "light"
       ? "/assets/images/isd-logo-light.svg"
       : "/assets/images/isd-logo-dark.svg";
+
+  const syncActiveFromUrl = useCallback(() => {
+    const win = getWindowSafe();
+    if (!win) return;
+    setActiveNavLabel(resolveActiveLabel(win.location.pathname));
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 12);
@@ -80,6 +113,16 @@ export default function Navbar() {
   }, [location]);
 
   useEffect(() => {
+    syncActiveFromUrl();
+    window.addEventListener("hashchange", syncActiveFromUrl);
+    window.addEventListener("popstate", syncActiveFromUrl);
+    return () => {
+      window.removeEventListener("hashchange", syncActiveFromUrl);
+      window.removeEventListener("popstate", syncActiveFromUrl);
+    };
+  }, [location, syncActiveFromUrl]);
+
+  useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
@@ -87,23 +130,26 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   const closeMenu = () => setIsMenuOpen(false);
+  const isActive = (item: (typeof navItems)[number]) => activeNavLabel === item.label;
 
-  const handleNavClick = (item: (typeof navItems)[0]) => {
+  const handleSectionClick = (item: (typeof navItems)[number]) => {
+    setActiveNavLabel(item.label);
     closeMenu();
-    if (item.sectionId) {
-      scrollToSection(item.sectionId);
-    }
+    if (item.sectionId) scrollToSection(item.sectionId);
   };
 
-  const isLinkActive = (item: (typeof navItems)[0]) => {
-    if (item.href === "/" && !item.sectionId) {
-      return location === "/";
-    }
-    if (item.href && !item.sectionId) {
-      return location === item.href || location.startsWith(`${item.href}/`);
-    }
-    return location === "/" && window.location.hash === `#${item.sectionId}`;
+  const handleRouteClick = (item: (typeof navItems)[number]) => {
+    setActiveNavLabel(item.label);
+    closeMenu();
+    if (item.label === "Home") goToHomeTop();
   };
+
+  const mobileItemClass = (item: (typeof navItems)[number]) =>
+    `block w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 ${
+      isActive(item)
+        ? "bg-primary-red/10 text-primary-red"
+        : "text-foreground hover:bg-muted hover:text-primary-red"
+    }`;
 
   return (
     <header
@@ -115,7 +161,11 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex justify-between items-center h-16 lg:h-[4.25rem]">
-          <Link href="/" className="flex items-center shrink-0 group" onClick={closeMenu}>
+          <Link
+            href="/"
+            className="flex items-center shrink-0 group"
+            onClick={() => handleRouteClick(navItems[0])}
+          >
             <img
               src={logoSrc}
               alt="ISD Solutions Logo"
@@ -126,15 +176,16 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {navItems.map((item) =>
               item.sectionId ? (
-                <NavLink
-                  key={item.label}
-                  isActive={isLinkActive(item)}
-                  onClick={() => handleNavClick(item)}
-                >
+                <NavLink key={item.label} isActive={isActive(item)} onClick={() => handleSectionClick(item)}>
                   {item.label}
                 </NavLink>
               ) : (
-                <NavLink key={item.label} href={item.href} isActive={isLinkActive(item)}>
+                <NavLink
+                  key={item.label}
+                  href={item.href}
+                  isActive={isActive(item)}
+                  onClick={() => handleRouteClick(item)}
+                >
                   {item.label}
                 </NavLink>
               )
@@ -143,7 +194,7 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <ThemeToggle />
-            <Link href="/contact">
+            <Link href="/contact" onClick={() => setActiveNavLabel("Contact")}>
               <Button
                 size="sm"
                 className="bg-primary-red hover:bg-primary-red/90 text-white shadow-sm hover:shadow-md transition-all duration-300 group"
@@ -184,12 +235,8 @@ export default function Navbar() {
                   <button
                     key={item.label}
                     type="button"
-                    onClick={() => handleNavClick(item)}
-                    className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                      isLinkActive(item)
-                        ? "bg-primary-red/10 text-primary-red"
-                        : "text-foreground hover:bg-muted hover:text-primary-red"
-                    }`}
+                    onClick={() => handleSectionClick(item)}
+                    className={mobileItemClass(item)}
                   >
                     {item.label}
                   </button>
@@ -197,12 +244,8 @@ export default function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    onClick={closeMenu}
-                    className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                      isLinkActive(item)
-                        ? "bg-primary-red/10 text-primary-red"
-                        : "text-foreground hover:bg-muted hover:text-primary-red"
-                    }`}
+                    onClick={() => handleRouteClick(item)}
+                    className={mobileItemClass(item)}
                   >
                     {item.label}
                   </Link>
@@ -210,7 +253,13 @@ export default function Navbar() {
               )}
             </div>
             <div className="mt-4 px-2 space-y-2">
-              <Link href="/contact" onClick={closeMenu}>
+              <Link
+                href="/contact"
+                onClick={() => {
+                  setActiveNavLabel("Contact");
+                  closeMenu();
+                }}
+              >
                 <Button className="w-full bg-primary-red hover:bg-primary-red/90 text-white group">
                   <MessageSquare className="mr-2 h-4 w-4" aria-hidden="true" />
                   Discuss Your Project
