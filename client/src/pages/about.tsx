@@ -1,8 +1,19 @@
-import React, { useRef } from "react";
+import React, { useEffect } from "react";
 import { useScrollAnimation } from "../lib/scroll-animations";
 import { Award, Users, Target, Zap } from "lucide-react";
 
 export default function About() {
+  useEffect(() => {
+    document.title = "About Us | ERP, AI & Digital Transformation Partner | ISD Solutions";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Learn about ISD Solutions — a technology company specializing in ERP implementation, AI-powered applications, custom software development, business automation, and digital transformation."
+      );
+    }
+  }, []);
+
   const [headerRef, headerVisible] = useScrollAnimation();
   const [aboutRef, aboutVisible] = useScrollAnimation();
   const [imageRef, imageVisible] = useScrollAnimation();
@@ -56,8 +67,16 @@ export default function About() {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 About <span className="text-gradient-red">ISD Solutions</span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                We are a leading IT solutions provider with over 5 years of experience in delivering innovative technology solutions that drive business growth and digital transformation.
+              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                ISD Solutions is a technology solutions company specializing in ERP
+                implementation, AI-powered business applications, custom software
+                development, business automation, reporting solutions, cloud
+                infrastructure, and digital transformation services.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                We help organizations improve efficiency, enhance decision-making,
+                automate operations, and accelerate growth through innovative
+                technology solutions.
               </p>
               <div className="space-y-6">
                 {features.map((feature, index) => (

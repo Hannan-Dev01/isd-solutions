@@ -7,7 +7,6 @@ import { useTheme } from "next-themes";
 export default function HeroSection() {
   const { theme } = useTheme();
 
-  // Choose logo based on theme
   const logoSrc =
     theme === "light"
       ? "/assets/images/isd-logo-light.svg"
@@ -19,7 +18,6 @@ export default function HeroSection() {
       role="banner"
       aria-label="Hero Section"
     >
-      {/* Background with gradient overlay */}
       <div
         className="absolute inset-0 bg-gradient-to-br from-background to-muted"
         aria-hidden="true"
@@ -29,7 +27,6 @@ export default function HeroSection() {
         aria-hidden="true"
       ></div>
 
-      {/* Hero content with technology background image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{
@@ -42,7 +39,6 @@ export default function HeroSection() {
       ></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Logo */}
         <div className="flex justify-center mb-8">
           <img
             src={logoSrc}
@@ -54,89 +50,64 @@ export default function HeroSection() {
         </div>
 
         <header>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-foreground">IT Solutions</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="text-foreground">ERP, AI & Digital Transformation</span>
             <br />
-            <span className="text-gradient-red">& Financial Services</span>
+            <span className="text-gradient-red">Partner for Modern Businesses</span>
           </h1>
         </header>
 
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-          Transform your business with cutting-edge technology solutions. We
-          deliver innovative IT services that drive growth and efficiency.
+        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
+          ISD Solutions helps organizations implement ERP systems, build AI-powered
+          business solutions, automate workflows, develop custom software, and
+          improve operational efficiency through secure, scalable, enterprise-grade
+          technology.
         </p>
 
-        {/* Key Features */}
         <div
-          className="flex flex-wrap justify-center gap-4 mb-8"
+          className="flex flex-wrap justify-center gap-4 mb-10"
           role="list"
-          aria-label="Key Services"
+          aria-label="Core capabilities"
         >
-          <div
-            className="flex items-center space-x-2 text-muted-foreground"
-            role="listitem"
-          >
-            <CheckCircle
-              className="text-primary-red"
-              size={20}
-              aria-hidden="true"
-            />
-            <span>Accounting</span>
-          </div>
-          <div
-            className="flex items-center space-x-2 text-muted-foreground"
-            role="listitem"
-          >
-            <CheckCircle
-              className="text-primary-red"
-              size={20}
-              aria-hidden="true"
-            />
-            <span>Taxation</span>
-          </div>
-          <div
-            className="flex items-center space-x-2 text-muted-foreground"
-            role="listitem"
-          >
-            <CheckCircle
-              className="text-primary-red"
-              size={20}
-              aria-hidden="true"
-            />
-            <span>Consulting</span>
-          </div>
-          <div
-            className="flex items-center space-x-2 text-muted-foreground"
-            role="listitem"
-          >
-            <CheckCircle
-              className="text-primary-red"
-              size={20}
-              aria-hidden="true"
-            />
-            <span>ERP Systems</span>
-          </div>
-          <div
-            className="flex items-center space-x-2 text-muted-foreground"
-            role="listitem"
-          >
-            <CheckCircle
-              className="text-primary-red"
-              size={20}
-              aria-hidden="true"
-            />
-            <span>Digital Transformation</span>
-          </div>
+          {["ERP Systems", "AI Solutions", "Custom Software", "Digital Transformation", "Business Automation"].map(
+            (item) => (
+              <div
+                key={item}
+                className="flex items-center space-x-2 text-muted-foreground"
+                role="listitem"
+              >
+                <CheckCircle
+                  className="text-primary-red"
+                  size={20}
+                  aria-hidden="true"
+                />
+                <span>{item}</span>
+              </div>
+            )
+          )}
         </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/contact">
             <Button
               size="lg"
-              className="bg-primary-red hover:bg-primary-red/90 text-white text-lg px-8 py-6 group"
+              className="bg-primary-red hover:bg-primary-red/90 text-white text-lg px-8 py-6 group w-full sm:w-auto"
             >
-              Get Started
+              Book Free Consultation
+              <ArrowRight
+                className="ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                aria-hidden="true"
+                size={20}
+              />
+            </Button>
+          </Link>
+          <Link href="/services">
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-lg px-8 py-6 group w-full sm:w-auto"
+            >
+              Explore Our Services
               <ArrowRight
                 className="ml-2 group-hover:translate-x-1 transition-transform duration-300"
                 aria-hidden="true"
@@ -147,7 +118,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Floating Elements */}
       <div
         className="absolute top-20 left-10 w-20 h-20 bg-primary-red/10 rounded-full blur-xl animate-pulse"
         aria-hidden="true"

@@ -29,10 +29,10 @@ function AppContent() {
         <meta name="theme-color" content="#dc2626" />
         
         {/* Primary Meta Tags */}
-        <title>ISD Solutions - Leading IT Solutions & Corporate Services Provider</title>
-        <meta name="title" content="ISD Solutions - Leading IT Solutions & Corporate Services Provider" />
-        <meta name="description" content="Transform your business with cutting-edge technology solutions. ISD Solutions delivers innovative IT services including Odoo, ERP, FBR Digital Invoicing, Web & Mobile Development that drive growth and efficiency." />
-        <meta name="keywords" content="IT Solutions, Corporate Services, Odoo Consultant, ERP Systems, FBR Digital Invoicing, Web Development, Mobile Development, Digital Transformation, Pakistan, Lahore" />
+        <title>ISD Solutions | ERP, AI, Software Development & Digital Transformation Company</title>
+        <meta name="title" content="ISD Solutions | ERP, AI, Software Development & Digital Transformation Company" />
+        <meta name="description" content="ISD Solutions provides ERP implementation, ERPNext, Odoo ERP, Oracle EBS support, AI agents, Agentic AI solutions, custom Laravel development, Python applications, reporting dashboards, FBR digital invoicing, business automation, and enterprise technology solutions." />
+        <meta name="keywords" content="ERP Implementation, Odoo ERP, ERPNext, Oracle EBS, AI Solutions, Agentic AI, Laravel Development, Python Development, FBR Digital Invoicing, Business Automation, Digital Transformation, Enterprise Software, Pakistan" />
         <meta name="author" content="ISD Solutions" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
@@ -40,19 +40,19 @@ function AppContent() {
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://isdsolutions.com/" />
-        <meta property="og:title" content="ISD Solutions - Leading IT Solutions & Corporate Services Provider" />
-        <meta property="og:description" content="Transform your business with cutting-edge technology solutions. ISD Solutions delivers innovative IT services including Odoo, ERP, FBR Digital Invoicing, Web & Mobile Development that drive growth and efficiency." />
-        <meta property="og:image" content="https://isdsolutions.com/assets/images/isd-logo-light.svg" />
+        <meta property="og:url" content="https://isdsolutions.org/" />
+        <meta property="og:title" content="ISD Solutions | ERP, AI, Software Development & Digital Transformation Company" />
+        <meta property="og:description" content="ISD Solutions provides ERP implementation, ERPNext, Odoo ERP, Oracle EBS support, AI agents, Agentic AI solutions, custom Laravel development, Python applications, reporting dashboards, FBR digital invoicing, business automation, and enterprise technology solutions." />
+        <meta property="og:image" content="https://isdsolutions.org/assets/images/isd-logo-light.svg" />
         <meta property="og:site_name" content="ISD Solutions" />
         <meta property="og:locale" content="en_US" />
         
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://isdsolutions.com/" />
-        <meta property="twitter:title" content="ISD Solutions - Leading IT Solutions & Corporate Services Provider" />
-        <meta property="twitter:description" content="Transform your business with cutting-edge technology solutions. ISD Solutions delivers innovative IT services including Odoo, ERP, FBR Digital Invoicing, Web & Mobile Development that drive growth and efficiency." />
-        <meta property="twitter:image" content="https://isdsolutions.com/assets/images/isd-logo-light.svg" />
+        <meta property="twitter:url" content="https://isdsolutions.org/" />
+        <meta property="twitter:title" content="ISD Solutions | ERP, AI, Software Development & Digital Transformation Company" />
+        <meta property="twitter:description" content="ISD Solutions provides ERP implementation, ERPNext, Odoo ERP, Oracle EBS support, AI agents, Agentic AI solutions, custom Laravel development, Python applications, reporting dashboards, FBR digital invoicing, business automation, and enterprise technology solutions." />
+        <meta property="twitter:image" content="https://isdsolutions.org/assets/images/isd-logo-light.svg" />
         
         {/* Additional SEO Meta Tags */}
         <meta name="application-name" content="ISD Solutions" />
@@ -61,7 +61,7 @@ function AppContent() {
         <meta name="msapplication-config" content="/browserconfig.xml" />
         
         {/* Canonical URL */}
-        <link rel="canonical" href="https://isdsolutions.com/" />
+        <link rel="canonical" href="https://isdsolutions.org/" />
         
         {/* Favicon and Icons */}
         <link rel="icon" type="image/svg+xml" href="/assets/images/isd-logo-light.svg" />
@@ -80,9 +80,9 @@ function AppContent() {
             "@type": "Organization",
             "name": "ISD Solutions",
             "alternateName": "Integrated Synchronized Digitilized Solutions",
-            "url": "https://isdsolutions.com",
-            "logo": "https://isdsolutions.com/assets/images/isd-logo-light.svg",
-            "description": "Leading IT solutions provider delivering innovative technology services that drive business growth and digital transformation.",
+            "url": "https://isdsolutions.org",
+            "logo": "https://isdsolutions.org/assets/images/isd-logo-light.svg",
+            "description": "ISD Solutions provides ERP implementation, ERPNext, Odoo ERP, Oracle EBS support, AI agents, Agentic AI solutions, custom Laravel development, Python applications, reporting dashboards, FBR digital invoicing, business automation, and enterprise technology solutions.",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "1st Floor Potohar Plaza - Blue Area",

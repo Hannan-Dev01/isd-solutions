@@ -14,10 +14,13 @@ import { Link } from "wouter";
 
 export default function Services() {
   useEffect(() => {
-    document.title = "Our Services - ISD Solutions | IT Solutions & Corporate Services";
+    document.title = "Services | ERP, AI, Software Development & Digital Transformation | ISD Solutions";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Explore ISD Solutions\' comprehensive IT services including web development, mobile apps, cloud solutions, cybersecurity, and data analytics.');
+      metaDescription.setAttribute(
+        "content",
+        "Explore ISD Solutions services: Odoo ERP, ERPNext, Oracle EBS support, FBR digital invoicing, Laravel & Python development, AI agents, reporting dashboards, cloud infrastructure, and enterprise automation."
+      );
     }
   }, []);
 
@@ -123,21 +126,22 @@ export default function Services() {
           <Card className="bg-card border-border">
             <CardContent className="p-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Ready to Transform Your Business?
+                Start Your Digital Transformation
               </h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Let's discuss your project and how our expert team can help you achieve your technology goals.
+                Schedule a discovery call with our solution experts to discuss ERP,
+                AI, custom software, and enterprise technology requirements.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
                   <Button className="btn-primary" size="lg">
                     <Rocket className="mr-2" size={20} />
-                    Start Your Project
+                    Book Free Consultation
                   </Button>
                 </Link>
                 <Link href="/projects">
                   <Button variant="outline" className="btn-secondary" size="lg">
-                    View Our Work
+                    Request a Demo
                   </Button>
                 </Link>
               </div>

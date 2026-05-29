@@ -37,8 +37,9 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              Leading IT solutions provider delivering innovative technology
-              services that drive business growth and digital transformation.
+              ERP, AI, Software Development & Digital Transformation Partner.
+              We help organizations streamline operations, automate processes,
+              and accelerate growth through secure, scalable technology.
             </p>
             <div className="flex space-x-4">
               <a
@@ -68,52 +69,35 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Expertise */}
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-4">
-              Services
+              Our Expertise
             </h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/services"
-                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
-                >
-                  Odoo Consultant
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
-                >
-                  ERP Next
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
-                >
-                  FBR Digital Invoicing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
-                >
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
-                >
-                  Mobile Development
-                </Link>
-              </li>
+              {[
+                "ERP Solutions",
+                "AI Solutions",
+                "Software Development",
+                "Laravel Development",
+                "Python Development",
+                "ERPNext",
+                "Oracle EBS",
+                "Odoo ERP",
+                "Reporting Dashboards",
+                "Digital Invoicing",
+                "Cloud Infrastructure",
+                "Business Automation",
+              ].map((item) => (
+                <li key={item}>
+                  <Link
+                    href="/services"
+                    className="text-muted-foreground hover:text-primary-red transition-colors duration-300"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -189,7 +173,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-muted-foreground text-sm mb-4 md:mb-0">
-            © 2024 ISD Solutions. All rights reserved.
+            © 2025 ISD Solutions. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm">
             <Link

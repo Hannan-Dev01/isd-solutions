@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -23,6 +23,17 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = "Contact Us | Book a Free Consultation | ISD Solutions";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Contact ISD Solutions for ERP implementation, AI solutions, custom software, FBR digital invoicing, reporting dashboards, and digital transformation. Request a consultation today."
+      );
+    }
+  }, []);
+
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [headerRef, headerVisible] = useScrollAnimation();
@@ -121,10 +132,12 @@ export default function Contact() {
             className={`text-center mb-16 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ''}`}
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Get In <span className="text-gradient-red">Touch</span>
+              Let&apos;s Build Your Next <span className="text-gradient-red">Digital Solution</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to transform your business with innovative technology solutions? Let's discuss your project.
+              Whether you need ERP implementation, AI solutions, custom software,
+              reporting systems, compliance automation, or digital transformation
+              services, our team is ready to help.
             </p>
           </div>
 

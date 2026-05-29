@@ -187,11 +187,12 @@ export default function ServicesAccordion() {
     <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Our <span className="text-gradient-red">Services</span>
-          </h2>
+          </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive IT solutions tailored to meet your business needs and drive digital transformation.
+            ERP, AI, software development, and digital transformation services
+            designed to streamline operations and accelerate business growth.
           </p>
         </div>
 

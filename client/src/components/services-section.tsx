@@ -1,57 +1,97 @@
 import React from "react";
+import { Link } from "wouter";
 import { Card, CardContent } from "./ui/card";
-import { Cloud, Code, Database, Smartphone, Settings, FileText, Calculator, Building2 } from "lucide-react";
+import { Button } from "./ui/button";
+import {
+  BarChart3,
+  Building2,
+  Calculator,
+  Cloud,
+  Code,
+  Database,
+  FileText,
+  Globe,
+  Layout,
+  LineChart,
+  Smartphone,
+  Terminal,
+  ArrowRight,
+} from "lucide-react";
 import { useScrollAnimation } from "../lib/scroll-animations";
 
 const services = [
   {
-    title: "Odoo Consultant",
-    description: "Odoo serves as a centralized platform for managing key business functions, including customer relationship management (CRM), human resources, and more.",
+    title: "Odoo ERP Implementation & Customization",
+    description:
+      "Help organizations manage finance, inventory, sales, manufacturing, HR, and operations through Odoo ERP solutions.",
     icon: Building2,
-    features: ["CRM Implementation", "HR Management", "Inventory Control", "Financial Management"]
   },
   {
-    title: "ERP Next",
-    description: "Comprehensive ERP solutions to streamline your business processes and improve operational efficiency.",
+    title: "ERPNext Implementation & Customization",
+    description:
+      "End-to-end ERPNext implementation, customization, reporting, and business process automation.",
     icon: FileText,
-    features: ["Process Automation", "Resource Planning", "Business Intelligence", "Integration Services"]
   },
   {
-    title: "FBR Digital Invoicing",
-    description: "Digital invoicing solutions compliant with Federal Board of Revenue requirements for seamless tax management.",
-    icon: Calculator,
-    features: ["FBR Compliance", "Digital Invoicing", "Tax Management", "Audit Trail"]
-  },
-  {
-    title: "Cloud Solutions",
-    description: "Scalable cloud infrastructure and migration services to optimize your business operations.",
-    icon: Cloud,
-    features: ["AWS/Azure/GCP", "Server Migration", "Auto Scaling", "Cost Optimization"]
-  },
-  {
-    title: "Web Development",
-    description: "Modern, responsive web applications built with cutting-edge technologies.",
-    icon: Code,
-    features: ["React/Next.js", "Node.js Backend", "Responsive Design", "SEO Optimization"]
-  },
-  {
-    title: "Mobile Development",
-    description: "Native and cross-platform mobile applications for iOS and Android.",
-    icon: Smartphone,
-    features: ["React Native", "Flutter", "Native iOS/Android", "App Store Publishing"]
-  },
-  {
-    title: "Application Bug Fixes",
-    description: "From priority bug-fixing, technical investigations and change requests, we'll support and maintain your software.",
-    icon: Settings,
-    features: ["Bug Resolution", "Technical Support", "Change Requests", "Software Maintenance"]
-  },
-  {
-    title: "Oracle EBS Upgrade",
-    description: "Oracle E-Business Suite (EBS) upgrade is the process of transitioning an existing EBS installation to a newer version released by Oracle Corporation.",
+    title: "Oracle E-Business Suite Support & Integration",
+    description:
+      "Support, customization, reporting, and integration services for Oracle EBS environments.",
     icon: Database,
-    features: ["Version Migration", "Data Migration", "System Testing", "User Training"]
-  }
+  },
+  {
+    title: "FBR Digital Invoicing Solutions",
+    description:
+      "Digital invoicing implementation, integration, compliance automation, and reporting.",
+    icon: Calculator,
+  },
+  {
+    title: "Custom PHP Laravel Development",
+    description:
+      "Enterprise-grade web applications, portals, workflow systems, and business platforms.",
+    icon: Code,
+  },
+  {
+    title: "Python Application Development",
+    description:
+      "FastAPI, Streamlit, automation systems, AI applications, and data processing solutions.",
+    icon: Terminal,
+  },
+  {
+    title: "Enterprise Web Applications",
+    description:
+      "Custom business applications designed around unique operational requirements.",
+    icon: Layout,
+  },
+  {
+    title: "Mobile Application Development",
+    description:
+      "Cross-platform mobile solutions for business operations.",
+    icon: Smartphone,
+  },
+  {
+    title: "Website Development",
+    description:
+      "Corporate websites, portfolio websites, business websites, and landing pages.",
+    icon: Globe,
+  },
+  {
+    title: "Management Information Systems",
+    description:
+      "Business process automation and operational management systems.",
+    icon: LineChart,
+  },
+  {
+    title: "Reporting & Dashboard Solutions",
+    description:
+      "Executive dashboards, KPI reporting, analytics platforms, and business intelligence systems.",
+    icon: BarChart3,
+  },
+  {
+    title: "Cloud & Infrastructure Services",
+    description:
+      "VPS deployment, cloud hosting, Linux administration, and infrastructure management.",
+    icon: Cloud,
+  },
 ];
 
 export default function ServicesSection() {
@@ -66,53 +106,58 @@ export default function ServicesSection() {
   return (
     <section className="py-20 bg-muted/30" aria-labelledby="services-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header 
-          ref={headerRef as any}
-          className={`text-center mb-16 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ''}`}
+        <header
+          ref={headerRef as React.RefObject<HTMLElement>}
+          className={`text-center mb-16 ${fadeInUp} ${headerVisible ? fadeInUpVisible : ""}`}
         >
           <h2 id="services-heading" className="text-4xl md:text-5xl font-bold mb-6">
             Our <span className="text-gradient-red">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We provide comprehensive IT solutions tailored to meet your business needs and drive digital transformation.
+            Comprehensive ERP, AI, software development, and digital transformation
+            services tailored to enterprise and growing business needs.
           </p>
         </header>
-        
-        <div 
-          ref={servicesRef as any}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${scaleIn} ${servicesVisible ? scaleInVisible : ''}`}
+
+        <div
+          ref={servicesRef as React.RefObject<HTMLElement>}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${scaleIn} ${servicesVisible ? scaleInVisible : ""}`}
           role="list"
           aria-label="IT Services"
         >
           {services.map((service, index) => (
-            <Card 
-              key={service.title} 
-              className="bg-card border-border card-hover group animate-slide-up overflow-hidden transform hover:scale-105 transition-all duration-500"
-              style={{ 
-                animationDelay: `${index * 0.1}s`,
-                animation: servicesVisible ? `slideInUp 0.6s ease-out ${index * 0.1}s both` : 'none'
+            <Card
+              key={service.title}
+              className="bg-card border-border card-hover group overflow-hidden transform hover:scale-105 transition-all duration-500"
+              style={{
+                animation: servicesVisible
+                  ? `slideInUp 0.6s ease-out ${index * 0.06}s both`
+                  : "none",
               }}
               role="listitem"
             >
               <CardContent className="p-8">
-                <div className="text-4xl text-primary-red mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
-                  <service.icon />
+                <div className="text-4xl text-primary-red mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon aria-hidden="true" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary-red transition-colors duration-300">{service.title}</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary-red transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
                   {service.description}
                 </p>
-                <ul className="space-y-2" role="list" aria-label={`${service.title} features`}>
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={feature} className="text-muted-foreground flex items-center group-hover:text-foreground transition-colors duration-300" role="listitem">
-                      <div className="w-2 h-2 bg-primary-red rounded-full mr-3 group-hover:scale-125 transition-transform duration-300" aria-hidden="true"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link href="/contact">
+            <Button size="lg" className="bg-primary-red hover:bg-primary-red/90 text-white group">
+              Talk to a Solution Expert
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} aria-hidden="true" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
